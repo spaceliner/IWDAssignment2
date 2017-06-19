@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="WallStreetWines">
+<meta name="author" content="DongSun,QiLeWang,WenboZhang">
+<title>Wall Street Wines</title>
+<!-- jQuery --> 
+    <script src="js/jquery.js"></script> 
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/main.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Questrial" rel="stylesheet">
+<!--    AngularJS-->
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+   
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html">Wall Street Wines</a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="ProductSideBar.html">Product</a> </li>
+		  <li> <a href="contact.html">About</a> </li>
+        <li> <a href="cart.html">Shopping Cart</a> </li>
+        <li><a href="Signup.html">SignUp</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container --> 
+</nav>
+<!-- Header Carousel -->
+   
+
+<div>
+  <div class="container-pic">
+    <img src="images/barnner.jpg" style="width:100%">
+    
+  </div>
+
+    
+    <div ng-app="myApp">
+            <!-- Page Content -->
+            <div class="jumbotron">
+
+           <div class="welcome"> <h2>Hello, Stranger!</h2>
+            <p>Welcome to Wall Street Wines. This is a simple Online Shopping Website, We have various product which you can choosen from</p>
+            <p><a class="btn btn-primary btn-lg" href="contact.html" role="button">Find Us</a>
+            </p></div>
+            </div>
+        <div class="container" ng-controller="myCtrl"> 
+
+            <div class="row">
+                <h2 class="page-header">Feature Item</h2>
+                <div class="card" ng-repeat="app in apps | filter:{'popularity':'High'}">
+                    <app-feature feature="app"></app-feature>
+                </div>
+
+            </div>
+
+
+
+          <!-- Portfolio Section -->
+            
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="page-header">Deal of Today</h2>
+            </div>
+              <div class="container" style="display:inline">
+               <div class="card" ng-repeat="app in apps | filter:{'onsale':'yes'}">
+                  <app-info info="app"></app-info>
+                </div>
+                   </div>
+          </div>
+             
+          <!-- /.row -->
+          <hr>
+
+        </div>
+    </div>
+    </div>
+<!-- /.container --> 
+  <footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li> <a href="contact.html"> ContactUs </a> </li>
+                        <li> <a href="contact.html"> Find Our Shop </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Website Links </h3>
+                    <ul>
+                        <li> <a href="index.html"> Home </a> </li>
+                        <li> <a href="ProductSideBar.html"> Product </a> </li>
+                        <li> <a href="cart.html"> ShoppingCart </a> </li>
+                        <li> <a href="Signup.html"> Signup </a> </li>
+                        <li> <a href="Login.html"> SignIn </a> </li>
+                        <li> <a href="contact.html"> Service </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Location </h3>
+                    <ul>
+                        <li> <a href="#"> Auckland </a> </li>
+                        <li> <a href="#"> Hamilton </a> </li>
+                        <li> <a href="#"> Christchurch </a> </li>
+                        <li> <a href="#"> Queenstown </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+<!--   End-->
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © 2017, Wall Street Wines. All rights reserved.</p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+
+  <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controller/MainController.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directive/appInfo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Wall Street Wines</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/product.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Wall Street Wines</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   <li> <a href="ProductSideBar.html">Product</a> </li>
+		  <li> <a href="contact.html">About</a> </li>
+        <li> <a href="cart.html">Shopping Cart</a> </li>
+        <li><a href="Signup.html">SignUp</a></li>
+        <li><a href="Login.html">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <br>
+    <br>
+    <br>
+    
+
+<div class="container text-center mycontainer">
+    
+    <div class="row">
+       
+        <div class="col-md-5 membersignup">
+            <form class="form-horizontal" name="membersignupform" onsubmit="return validateForm()">
+                <fieldset>
+                    <div id="error" class="container_bgc"></div>
+                    <div class="form-group">
+                          <h2 class="page-header" >SignUp Here </h2>
+                        <label for="inputFName" class="col-lg-4 control-label">First Name *</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="inputFName" placeholder="First Name" onblur="validateName()">
+                            <span class="error inputFName"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLName" class="col-lg-4 control-label">Last Name *</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="inputLName" placeholder="Last Name" onblur="validateSurname()">
+                            <span class="error inputLName"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-4 control-label">Email *</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email" onblur="validateEmail()">
+                            <span class="error inputEmail"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">Gender *</label>
+                        <div class="col-lg-8">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="male" value="male" checked>Male
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" id="female" value="female">Female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDate" class="col-lg-4 control-label">Date of birth *</label>
+                        <div class="col-lg-8">
+                            <input type="date" class="form-control" id="inputDate" max="1998-01-01" min="1900-01-01">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="chboxTerm" value="Agree the Terms & Conditions" id="chboxTerm"> I agree Terms & conditions
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <!-- /.container -->
+	        <!-- Footer -->
+       <footer id="footer-signup">
+    <div class="footer" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li> <a href="contact.html"> ContactUs </a> </li>
+                        <li> <a href="contact.html"> Find Our Shop </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Website Links </h3>
+                    <ul>
+                        <li> <a href="ProductSideBar.html">Product</a> </li>
+		                <li> <a href="contact.html">About</a> </li>
+                        <li> <a href="cart.html">Shopping Cart</a> </li>
+                        <li><a href="Signup.html">SignUp</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Location </h3>
+                    <ul>
+                        <li> <a href="#"> Auckland </a> </li>
+                        <li> <a href="#"> Hamilton </a> </li>
+                        <li> <a href="#"> Christchurch </a> </li>
+                        <li> <a href="#"> Queenstown </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+<!--   End-->
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © 2017, Wall Street Wines. All rights reserved.</p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+</div>
+<!--JS -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+
+</html>

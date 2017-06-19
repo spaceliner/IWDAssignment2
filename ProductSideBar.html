@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wall Street Wines</title>
+    <!--jQuery 	-->
+	<script src="js/jquery.js"></script>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/main.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!--  ShoppingCart  -->
+    <script src="js/ShoppingCart.js"></script>
+<!--	AngularJS-->
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html">Wall Street Wines</a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="ProductSideBar.html">Product</a> </li>
+		  <li> <a href="contact.html">About</a> </li>
+        <li> <a href="cart.html">Shopping Cart</a> </li>
+        <li><a href="Signup.html">SignUp</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container --> 
+</nav>
+
+
+<!--Category Start Here-->
+    <!-- display the products by ajax -->
+<div class="container container_product" style="margin-top: 50px;">
+    <h1>Products</h1>
+   <p style="font-family: 'Courgette', cursive;font-size:15px;">We choose wines that express their origins, the talent and commitment of the growers and winemakers, and the inherent quality of the vintage. Every wine we stock is tasted, re-tasted, debated.... this is a shop where everyone who works here actually loves wine, drinks wine with food, and knows at least a little bit about what we're selling.</p>
+    <div class="product_cat btn-group btn-group-justified">
+        <a href="javascript:showAll()" class="btn btn-primary">All</a>
+        <a href="javascript:categorySelect(1)" class="btn btn-primary">White Wine</a>
+        <a href="javascript:categorySelect(2)" class="btn btn-primary">Red Wine</a>
+        <a href="javascript:categorySelect(3)" class="btn btn-primary">Champagne</a>
+        <a href="javascript:categorySelect(4)" class="btn btn-primary">Sparkling</a>
+        <a href="javascript:categorySelect(5)" class="btn btn-primary">Whiskey</a>
+    </div>
+    <div class="row" id="productlist">
+        <!-- display products by ajax -->
+    </div>
+</div>
+
+    <div class="main" ng-controller="myCtrl">
+      <div class="container" class="display:block;">
+        <div  class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat= "product in apps">
+          <div class="catFilter{{product.category}} thumbnail">
+         
+            <img ng-src="{{product.img}}">
+            <p class="title"> {{product.name | uppercase}}</p>
+            <p class="price">{{product.price | currency}} </p>
+            <p class="desc">{{product.description }} </p>
+            <p class="category"> {{product.category  }}</p>
+			 <button  class="btn btn-lg btn-primary" data-name="{{product.name}}" data-price="{{product.price}}">Add to Cart</button>
+      
+   
+          </div>
+        </div>
+
+    </div>
+	</div>
+   <footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li> <a href="contact.html"> ContactUs </a> </li>
+                        <li> <a href="contact.html"> Find Our Shop </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Website Links </h3>
+                    <ul>
+                        <li> <a href="index.html"> Home </a> </li>
+                        <li> <a href="ProductSideBar.html"> Product </a> </li>
+                        <li> <a href="cart.html"> ShoppingCart </a> </li>
+                        <li> <a href="Signup.html"> Signup </a> </li>
+                        <li> <a href="Login.html"> SignIn </a> </li>
+                        <li> <a href="contact.html"> Service </a> </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3> Location </h3>
+                    <ul>
+                        <li> <a href="#"> Auckland </a> </li>
+                        <li> <a href="#"> Hamilton </a> </li>
+                        <li> <a href="#"> Christchurch </a> </li>
+                        <li> <a href="#"> Queenstown </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.footer-->
+
+<!--   End-->
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © 2017, Wall Street Wines. All rights reserved.</p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                    <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom-->
+</footer>
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controller/MainController.js"></script>
+
+<!-- Category Change  -->
+ <script src="js/category.js"></script>
+
+  </body>
+</html>
